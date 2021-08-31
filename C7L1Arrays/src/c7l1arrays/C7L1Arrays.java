@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package semesterproject;
+package c7l1arrays;
 
 /**
  *
  * @author jarie
  */
-public class SemesterProject {
+public class C7L1Arrays {
 
     /**
      * @param args the command line arguments

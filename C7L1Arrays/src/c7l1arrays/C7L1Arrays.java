@@ -1,5 +1,6 @@
 package c7l1arrays;
-import java.util.Random;
+import java.util.Random; // Java Utility to Generate Random Numbers
+import java.util.Arrays; // Java Utility to make printing the array easier
 /**
  *
  * @author Jariel Jimenez-Lopez          CPSC1110.40481 C7 L1  9/1/2021
@@ -11,10 +12,16 @@ public class C7L1Arrays {
         Random rdm = new Random();
         // Step 2: Create the new array (I've titled it randomNumbers)
         int[] randomNumbers = new int[20];
-        // Create a loop to assign the random values to the array
+        // Step 3: Create a loop to assign the random values to the array
         for (int i = 0; i < randomNumbers.length; i++) {
-            
+            randomNumbers[i] = rdm.nextInt(101); // Store a random interger in the index, i, of the array. "101" is the maximum value, excluding 101.
         }
+        // Step 4: Print out the resulting array (I used the Arrays Utility)
+        System.out.println(Arrays.toString(randomNumbers));
+        
+        // Step 5: Print out only the even numbers of the array
+        
+        //System.out.println()
     }
     
 }

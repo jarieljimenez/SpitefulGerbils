@@ -17,10 +17,16 @@ public class C7L1Arrays {
             randomNumbers[i] = rdm.nextInt(101); // Store a random interger in the index, i, of the array. "101" is the maximum value, excluding 101.
         }
         // Step 4: Print out the resulting array (I used the Arrays Utility)
-        System.out.println(Arrays.toString(randomNumbers));
-        
+        for (int i = 0; i < randomNumbers.length; i++) {
+            System.out.print(randomNumbers[i] + " ");
+        }
+        System.out.print("\n");
         // Step 5: Print out only the even numbers of the array
-        
+        for (int i = 0; i < randomNumbers.length; i++) {
+            if (randomNumbers[i]%2==0) {
+                System.out.print(randomNumbers[i] + " ");
+            }
+        }
         //System.out.println()
     }
     

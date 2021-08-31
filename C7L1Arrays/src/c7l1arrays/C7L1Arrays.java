@@ -1,21 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package c7l1arrays;
-
+import java.util.Random;
 /**
  *
- * @author jarie
+ * @author Jariel Jimenez-Lopez          CPSC1110.40481 C7 L1  9/1/2021
  */
 public class C7L1Arrays {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // Step 1: Create the Random Object
+        Random rdm = new Random();
+        // Step 2: Create the new array (I've titled it randomNumbers)
+        int[] randomNumbers = new int[20];
+        // Create a loop to assign the random values to the array
+        for (int i = 0; i < randomNumbers.length; i++) {
+            
+        }
     }
     
 }

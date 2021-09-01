@@ -52,7 +52,7 @@ public class C7L1Arrays {
         for (int i = 1; i < randomNumbers.length; i++) { // Starts at 1 to avoid counting zero as the third value.
             if (i%3==0) { // Runs if the remainder of i when divided by 3 is = 0.
                 sumOfThirds = sumOfThirds + randomNumbers[i]; // Takes the sum of the array value and adds it to the existing sumOfThirds variable.
-                System.out.print(randomNumbers[i]+ " "); // This prints out the number in this index
+                System.out.print(randomNumbers[i]+ " ");
             }
         }
         System.out.println("= " + sumOfThirds); // Prints out the equal sign and the sumOfThirds value.

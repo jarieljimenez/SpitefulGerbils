@@ -1,5 +1,5 @@
 package c7l1arrays;
-import java.util.Random; // Java Utility to Generate Random Numbers
+import java.util.Random;
 /**
  *
  * @author Jariel Jimenez-Lopez          CPSC1110.40481 C7 L1  9/1/2021

@@ -1,8 +1,11 @@
 package spitefulgerbilsapp;
 
+public class HeightWeight;
 
-
-public void cameronIsCool(){
-    System.out.println("Bryce Sucks");
-    private int hair;
+public static heightWeight(){
+    public void cameronIsCool(){
+        System.out.println("Bryce Sucks");
+        private int hair;
+    }
 }
+

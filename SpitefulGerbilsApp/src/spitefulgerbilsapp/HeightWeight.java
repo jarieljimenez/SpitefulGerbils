@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class HeightWeight;
 
-public static HeightWeight(){
+public static void heightWeight(){
     public void answers(){
         Scanner gender = new Scanner(System.in);
         System.out.println("Are you male or female");

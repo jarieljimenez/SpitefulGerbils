@@ -3,10 +3,10 @@ package spitefulgerbilsapp;
 import java.util.Random;
 import java.util.Scanner;
 
-public class HeightWeight;
+public class HeightWeight {
 
-public static void heightWeight(){
-    public void answers(){
+// public static void main(String[] args) { - NetBeans says you don't need this because this isn't a tester class.
+    public void answers() {
         Scanner gender = new Scanner(System.in);
         System.out.println("Are you male or female");
         String mf = gender.nextLine();
@@ -44,4 +44,5 @@ public static void heightWeight(){
         }
     }
 }
+//}
 

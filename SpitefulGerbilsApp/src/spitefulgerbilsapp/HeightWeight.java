@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class HeightWeight {
 
 // public static void main(String[] args) { - NetBeans says you don't need this because this isn't a tester class.
-    private String int mf;
+    private String mf;
     
     public void answers(){
         Scanner gender = new Scanner(System.in);

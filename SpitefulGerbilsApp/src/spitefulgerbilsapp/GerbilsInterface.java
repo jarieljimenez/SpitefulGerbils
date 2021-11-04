@@ -19,5 +19,5 @@ public interface GerbilsInterface
     public void getNewChar();
     
     public void setUserAccount();
-    public void getUserAcoount();
+    public void getUserAccount();
 }

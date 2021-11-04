@@ -5,7 +5,7 @@ package spitefulgerbilsapp;
  * @author XWP921
  */
 public class Character implements GerbilsInterface {
-    public void setCharracterInfo() {
+    public void setCharInfo() {
         
     }
     public void accessCharInfo() {

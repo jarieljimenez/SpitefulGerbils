@@ -13,21 +13,42 @@ import java.util.Scanner;
  * @author ojayl
  */
 public class AgeSet {
-    int num1;
+    int age;
     int max;
     int min;
-    String mf;
-    public void Genderset(){
+    String race;
+    public void ageGenerate(){
     Scanner input = new Scanner(System.in);
-    mf = input.next();
+    System.out.println("Please input the race");
+    race = input.next();
         
-    if (mf == "male"){
-        System.out.print(mf);
-  
+    if ("Human".equals(race)){
+        System.out.println(race);
+        min = 15;
+        max = 30;
         }
-    else if(mf == "female"){
-        System.out.println(mf);
+    else if("Elf".equals(race)){
+        System.out.println(race);
+        min = 80;
+        max = 180;
     
+        }
+    else if("Dwarf".equals(race)){
+        System.out.println(race);
+        min = 40;
+        max = 70;
+    
+        }
+    else if("Gnome".equals(race)){
+        System.out.println(race);
+        min = 30;
+        max = 60;
+    
+        }
+    else if("Halfling".equals(race)){
+        System.out.println(race);
+        min = 30;
+        max = 50;
     
         }
     else {
@@ -35,11 +56,10 @@ public class AgeSet {
         
         }
     
-    
     Random randAge = new Random();
     
-    num1 = randAge.nextInt((max - min) + 1) + min;
-    System.out.println(num1);
+    age = randAge.nextInt((max - min) + 1) + min;
+    System.out.println(age);
 
     }
 }

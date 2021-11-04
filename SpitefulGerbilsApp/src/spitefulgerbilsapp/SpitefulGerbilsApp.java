@@ -11,6 +11,8 @@ public class SpitefulGerbilsApp {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        AgeSet jay = new AgeSet();
+        jay.ageGenerate();
     }
     
 }

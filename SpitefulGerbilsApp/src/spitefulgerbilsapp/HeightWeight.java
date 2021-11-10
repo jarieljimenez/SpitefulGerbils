@@ -12,11 +12,13 @@ public class HeightWeight {
         Scanner gender = new Scanner(System.in);
         System.out.println("Are you male or female");
         mf = gender.nextLine();
-        if(!"male".equalsIgnoreCase() || !"female".equalsIgnoreCase()){
-            System.out.println("Please enter a valid answer.");
-        }else{
-            humanHeight();
-            humanWeight();
+        if("male".equalsIgnoreCase()){
+            if("female".equalsIgnoreCase()){
+                humanHeight();
+                humanWeight();
+            }else{
+                System.out.println("Please Enter a Valid Response.");
+            }    
         }
     }
     

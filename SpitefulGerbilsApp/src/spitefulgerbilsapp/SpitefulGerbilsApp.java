@@ -25,8 +25,8 @@ public class SpitefulGerbilsApp {
             dice.roll5d6Dice(5,6);
             //dice.roll3d6Dice(3,6);
             //dice.roll5d6Dice(5,6);
-
-    
+            HeightWeight yuh = new HeightWeight();
+            yuh.run();
             
             
         TitleScreen test1 = new TitleScreen(); //Jacobs shit

@@ -12,13 +12,26 @@ public class HeightWeight {
         Scanner gender = new Scanner(System.in);
         System.out.println("Are you male or female");
         mf = gender.nextLine();
-        if(!"male".equalsIgnoreCase() || !"female".equalsIgnoreCase()){
-            System.out.println("Please enter a valid answer.");
-        }else{
+<<<<<<< HEAD
+        if ("female".equalsIgnoreCase(mf) || "male".equalsIgnoreCase(mf)){
             humanHeight();
             humanWeight();
+         
+            }
+        
+                else{
+            System.out.println("Please enter a valid answer.");
+            }
+=======
+        if("male".equalsIgnoreCase(mf)){
+            if("female".equalsIgnoreCase(mf)){
+                humanHeight();
+                humanWeight();
+            }else{
+                System.out.println("Please Enter a Valid Response.");
+            }    
+>>>>>>> 68205e1c49803f57879e9a6a0695545cb475455e
         }
-    }
     
     public void humanHeight(){
         Random rand = new Random();

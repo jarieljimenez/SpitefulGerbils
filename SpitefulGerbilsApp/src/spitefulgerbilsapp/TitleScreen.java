@@ -10,15 +10,16 @@ package spitefulgerbilsapp;
  * @author jacob
  */
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class TitleScreen 
-{
-       
-        
+{        
     public static void signUp() throws IOException 
     {
         FileWriter writer = new FileWriter("user_info.txt",true); 

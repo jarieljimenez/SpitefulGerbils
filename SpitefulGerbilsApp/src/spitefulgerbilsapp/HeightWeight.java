@@ -12,8 +12,8 @@ public class HeightWeight {
         Scanner gender = new Scanner(System.in);
         System.out.println("Are you male or female");
         mf = gender.nextLine();
-        if("male".equalsIgnoreCase()){
-            if("female".equalsIgnoreCase()){
+        if("male".equalsIgnoreCase(mf)){
+            if("female".equalsIgnoreCase(mf)){
                 humanHeight();
                 humanWeight();
             }else{

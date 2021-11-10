@@ -18,30 +18,30 @@ public class AgeSet {
     System.out.println("Please input the race");
     race = input.next();
         
-    if ("Human".equals(race)){
+    if ("Human".equalsIgnoreCase(race)){
         System.out.println(race);
         min = 15;
         max = 30;
         }
-    else if("Elf".equals(race)){
+    else if("Elf".equalsIgnoreCase(race)){
         System.out.println(race);
         min = 80;
         max = 180;
     
         }
-    else if("Dwarf".equals(race)){
+    else if("Dwarf".equalsIgnoreCase(race)){
         System.out.println(race);
         min = 40;
         max = 70;
     
         }
-    else if("Gnome".equals(race)){
+    else if("Gnome".equalsIgnoreCase(race)){
         System.out.println(race);
         min = 30;
         max = 60;
     
         }
-    else if("Halfling".equals(race)){
+    else if("Halfling".equalsIgnoreCase(race)){
         System.out.println(race);
         min = 30;
         max = 50;

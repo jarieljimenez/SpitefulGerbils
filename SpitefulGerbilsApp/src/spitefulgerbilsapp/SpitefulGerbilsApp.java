@@ -18,6 +18,7 @@ public class SpitefulGerbilsApp {
     //dice.roll5d6Dice(5,6);
      HeightWeight yuh = new HeightWeight();
      yuh.run();
+     
         
     }
     

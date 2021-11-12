@@ -24,7 +24,6 @@ public class HeightWeight {
         Scanner race = new Scanner(System.in);
         System.out.println("What is your race? Human, Elf, Dwarf, Gnome, or Halfing?");
         rc = race.nextLine();
-    }
      if("male".equalsIgnoreCase(mf) || "female".equalsIgnoreCase(mf)){
         if("human".equalsIgnoreCase(rc) || "elf".equalsIgnoreCase(rc) || "dwarf".equalsIgnoreCase(rc) || "gnome".equalsIgnoreCase(rc) || "halfling".equalsIgnoreCase(rc)) {   
             if("human".equalsIgnoreCase(rc)){
@@ -70,7 +69,7 @@ public class HeightWeight {
                 mHeiMax = 41;
                 mHeiMin = 30;
                 height();
-                weight()
+                weight();
             }else if("halfling".equalsIgnoreCase(rc)){
                 fWeiMax = 70;
                 fWeiMin = 45;
@@ -84,12 +83,13 @@ public class HeightWeight {
                 weight();
             }
         }else{
-           System.out.println("Please Enter a Valid Race."):
+           System.out.println("Please Enter a Valid Race.");
         }
     }else{
         System.out.println("Please Enter a Valid Gender.");   
     }
-    public void height(int max, int min){
+    }
+    public void height(){
         Random rand = new Random();
         if("male".equalsIgnoreCase(mf)){
             int randomNum = rand.nextInt(mHeiMax + 1 - mHeiMin) + mHeiMin;
@@ -103,7 +103,7 @@ public class HeightWeight {
             System.out.println("Your Height is " + femaleHeight + "'" + modHeight);
         }
     }
-    public void weight(int max, int min){
+    public void weight(){
         Random rand = new Random();    
         if("male".equalsIgnoreCase(mf)){
             int randomNumTwo = rand.nextInt(mWeiMax + 1 - mWeiMin) + mWeiMin;

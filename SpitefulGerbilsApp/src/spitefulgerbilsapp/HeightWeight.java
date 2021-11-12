@@ -89,7 +89,7 @@ public class HeightWeight {
         System.out.println("Please Enter a Valid Gender.");   
     }
     }
-    public void height(int max, int min){
+    public void height(){
         Random rand = new Random();
         if("male".equalsIgnoreCase(mf)){
             int randomNum = rand.nextInt(mHeiMax + 1 - mHeiMin) + mHeiMin;
@@ -103,7 +103,7 @@ public class HeightWeight {
             System.out.println("Your Height is " + femaleHeight + "'" + modHeight);
         }
     }
-    public void weight(int max, int min){
+    public void weight(){
         Random rand = new Random();    
         if("male".equalsIgnoreCase(mf)){
             int randomNumTwo = rand.nextInt(mWeiMax + 1 - mWeiMin) + mWeiMin;

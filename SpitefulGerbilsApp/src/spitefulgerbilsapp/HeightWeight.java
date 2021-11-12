@@ -24,7 +24,6 @@ public class HeightWeight {
         Scanner race = new Scanner(System.in);
         System.out.println("What is your race? Human, Elf, Dwarf, Gnome, or Halfing?");
         rc = race.nextLine();
-    }
      if("male".equalsIgnoreCase(mf) || "female".equalsIgnoreCase(mf)){
         if("human".equalsIgnoreCase(rc) || "elf".equalsIgnoreCase(rc) || "dwarf".equalsIgnoreCase(rc) || "gnome".equalsIgnoreCase(rc) || "halfling".equalsIgnoreCase(rc)) {   
             if("human".equalsIgnoreCase(rc)){
@@ -88,6 +87,7 @@ public class HeightWeight {
         }
     }else{
         System.out.println("Please Enter a Valid Gender.");   
+    }
     }
     public void height(int max, int min){
         Random rand = new Random();

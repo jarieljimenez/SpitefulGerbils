@@ -69,7 +69,7 @@ public class HeightWeight {
                 mHeiMax = 41;
                 mHeiMin = 30;
                 height();
-                weight()
+                weight();
             }else if("halfling".equalsIgnoreCase(rc)){
                 fWeiMax = 70;
                 fWeiMin = 45;
@@ -83,7 +83,7 @@ public class HeightWeight {
                 weight();
             }
         }else{
-           System.out.println("Please Enter a Valid Race."):
+           System.out.println("Please Enter a Valid Race.");
         }
     }else{
         System.out.println("Please Enter a Valid Gender.");   

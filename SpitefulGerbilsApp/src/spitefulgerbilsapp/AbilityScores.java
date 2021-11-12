@@ -11,5 +11,9 @@ package spitefulgerbilsapp;
  */
 public class AbilityScores 
 {
+    public void setRaceScore()
+    {
+    if
     
+    }
 }

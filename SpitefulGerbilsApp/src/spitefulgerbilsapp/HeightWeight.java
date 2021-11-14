@@ -3,9 +3,8 @@ package spitefulgerbilsapp;
 import java.util.Random;
 import java.util.Scanner;
 
-public class HeightWeight {
-
-// public static void main(String[] args) { - NetBeans says you don't need this because this isn't a tester class.
+public class HeightWeight{
+    
     private String mf;
     private String rc;
     private int fWeiMax;
@@ -16,6 +15,9 @@ public class HeightWeight {
     private int fHeiMin;
     private int mHeiMax;
     private int mHeiMin;
+    private int age;
+    private int max;
+    private int min;
     
     public void answers(){
         Scanner gender = new Scanner(System.in);
@@ -37,6 +39,7 @@ public class HeightWeight {
                 mHeiMin = 54;
                 height();
                 weight();
+                ageGenerate();
             }else if("elf".equalsIgnoreCase(rc)){
                 fWeiMax = 100;
                 fWeiMin = 65;
@@ -48,6 +51,7 @@ public class HeightWeight {
                 mHeiMin = 48;
                 height();
                 weight();
+                ageGenerate();
             }else if("dwarf".equalsIgnoreCase(rc)){
                 fWeiMax = 180;
                 fWeiMin = 125;
@@ -59,6 +63,7 @@ public class HeightWeight {
                 mHeiMin = 48;
                 height();
                 weight();
+                ageGenerate();
             }else if("gnome".equalsIgnoreCase(rc)){
                 fWeiMax = 55;
                 fWeiMin = 35;
@@ -70,6 +75,7 @@ public class HeightWeight {
                 mHeiMin = 30;
                 height();
                 weight();
+                ageGenerate();
             }else if("halfling".equalsIgnoreCase(rc)){
                 fWeiMax = 70;
                 fWeiMin = 45;
@@ -81,6 +87,7 @@ public class HeightWeight {
                 mHeiMin = 38;
                 height();
                 weight();
+                ageGenerate();
             }
         }else{
            System.out.println("Please Enter a Valid Race.");
@@ -115,5 +122,36 @@ public class HeightWeight {
     }
     public void run(){
         answers();
+    }
+    public void ageGenerate(){
+        if ("Human".equalsIgnoreCase(rc)){
+            min = 15;
+            max = 30;
+        }
+        else if("Elf".equalsIgnoreCase(rc)){
+            min = 80;
+            max = 180;
+        }
+        else if("Dwarf".equalsIgnoreCase(rc)){            
+            min = 40;
+            max = 70;       
+        }
+        else if("Gnome".equalsIgnoreCase(rc)){            
+            min = 30;
+            max = 60;   
+        }
+        else if("Halfling".equalsIgnoreCase(rc)){           
+            min = 30;
+            max = 50;  
+        }
+        else {
+            System.out.println("Incorrect entry");       
+        }
+    
+        Random randAge = new Random();
+    
+        age = randAge.nextInt((max - min) + 1) + min;
+        System.out.println("You are " + age + " years old.");
+
     }
 }

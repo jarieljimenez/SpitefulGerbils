@@ -27,10 +27,9 @@ public class SpitefulGerbilsApp {
             //test.generateRaceScore();
             
             
-        //TitleScreen test1 = new TitleScreen(); //Jacobs shit
-        
-        //test1.menuSelection();
-        //test1.createAccount();
+        TitleScreen test1 = new TitleScreen(); //Jacobs shit
+        test1.firstmenu();
+       
 
     
 }

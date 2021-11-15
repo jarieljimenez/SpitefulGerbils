@@ -20,6 +20,22 @@ import java.util.Scanner;
 
 public class TitleScreen 
 {        
+     public static void firstmenu() throws IOException
+    {
+        TitleScreen test1 = new TitleScreen();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter 1 to sign up for user account, 2 to log in ");
+        int decision = scanner.nextInt();
+        if (decision == 1) 
+        {
+            signUp();
+        } 
+        else if (decision == 2) 
+        {
+            signIn();
+        }
+    }
+    
     public static void signUp() throws IOException 
     {
         FileWriter writer = new FileWriter("user_info.txt",true); 

@@ -26,6 +26,14 @@ public class HeightWeight extends DiceRoller
     private int height;
     private int modHeight;
     private int abilityScore;
+    private int strength;
+    private int dexterity;
+    private int constitution;
+    private int intelligence;
+    private int wisdom;
+    private int charisma;
+    private String abilityType;
+    
     
     public void charGen(){
         Scanner name = new Scanner(System.in);
@@ -197,20 +205,23 @@ public class HeightWeight extends DiceRoller
     
     public void generateRaceScore()
     {  
-            if("male".equalsIgnoreCase(mf) || "female".equalsIgnoreCase(mf)){
             Scanner race = new Scanner(System.in);
             System.out.println("What is your race? Human, Elf, Dwarf, Gnome, or Halfing?");
             rc = race.nextLine();
-            if("human".equalsIgnoreCase(rc) || "elf".equalsIgnoreCase(rc) || "dwarf".equalsIgnoreCase(rc) || "gnome".equalsIgnoreCase(rc) || "halfling".equalsIgnoreCase(rc)){
+            if("human".equalsIgnoreCase(rc) || "elf".equalsIgnoreCase(rc) || "dwarf".equalsIgnoreCase(rc) || "gnome".equalsIgnoreCase(rc) || "halfling".equalsIgnoreCase(rc))
+            {
 
                 if("human".equalsIgnoreCase(rc)){
                     rc = "Human";
                     System.out.println("Your Ability Score Has Not Changed");
+                  
                 }
                 else if("elf".equalsIgnoreCase(rc))
                 {
                     rc = "Elf";
                     System.out.println("Your Ability Score is Changed by +2");
+                    System.out.println(roll3d6Dice(3,6) + 2);
+                    
                 }
                 else if("dwarf".equalsIgnoreCase(rc))
                 {
@@ -220,14 +231,17 @@ public class HeightWeight extends DiceRoller
                 else if("gnome".equalsIgnoreCase(rc))
                 {
                     rc = "Gnome";
-                    System.out.println("Your Ability Score is Changed by +2");
+                    System.out.println("Your Ability Score is Changed by +2\n");
+                    
                 }
                 else if("halfling".equalsIgnoreCase(rc))
                 {
                     rc = "Halfing";
                     abilityScore = roll3d6Dice(3,6);
                     System.out.println("Your Ability Score is Changed by +2");
+                    
                 }
+            }
     }
     
       

@@ -1,5 +1,5 @@
 package spitefulgerbilsapp;
-
+import java.io.IOException;
 /**
  *
  * @author XWP921
@@ -9,7 +9,7 @@ public class SpitefulGerbilsApp {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) 
+    public static void main(String[] args) throws IOException
     {
 
             DiceRoller dice = new DiceRoller();
@@ -27,7 +27,7 @@ public class SpitefulGerbilsApp {
             //test.generateRaceScore();
             
             
-        TitleScreen test1 = new TitleScreen(); //Jacobs shit
+        TitleScreen test1 = new TitleScreen(); //Tester for Title Screen Methods 
         test1.firstmenu();
        
 

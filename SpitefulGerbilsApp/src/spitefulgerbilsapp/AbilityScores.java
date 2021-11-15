@@ -9,11 +9,10 @@ package spitefulgerbilsapp;
  *
  * @author jones
  */
-public class AbilityScores 
-{
-    public void setRaceScore()
-    {
-    if
+// public class AbilityScores {
+//     public void setRaceScore()
+//     {
+//     if
     
-    }
-}
+//     }
+// }

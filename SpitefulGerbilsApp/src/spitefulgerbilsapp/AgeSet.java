@@ -13,49 +13,45 @@ public class AgeSet {
     int max;
     int min;
     String race;
-    public void ageGenerate(){
-    Scanner input = new Scanner(System.in);
-    System.out.println("Please input the race");
-    race = input.next();
-        
-    if ("Human".equalsIgnoreCase(race)){
-        System.out.println(race);
-        min = 15;
-        max = 30;
+
+    public void ageGenerate() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Please input the race");
+        race = input.next();
+
+        if ("Human".equalsIgnoreCase(race)) {
+            System.out.println(race);
+            min = 15;
+            max = 30;
+        } else if ("Elf".equalsIgnoreCase(race)) {
+            System.out.println(race);
+            min = 80;
+            max = 180;
+
+        } else if ("Dwarf".equalsIgnoreCase(race)) {
+            System.out.println(race);
+            min = 40;
+            max = 70;
+
+        } else if ("Gnome".equalsIgnoreCase(race)) {
+            System.out.println(race);
+            min = 30;
+            max = 60;
+
+        } else if ("Halfling".equalsIgnoreCase(race)) {
+            System.out.println(race);
+            min = 30;
+            max = 50;
+
+        } else {
+            System.out.println("Incorrect entry");
+
         }
-    else if("Elf".equalsIgnoreCase(race)){
-        System.out.println(race);
-        min = 80;
-        max = 180;
-    
-        }
-    else if("Dwarf".equalsIgnoreCase(race)){
-        System.out.println(race);
-        min = 40;
-        max = 70;
-    
-        }
-    else if("Gnome".equalsIgnoreCase(race)){
-        System.out.println(race);
-        min = 30;
-        max = 60;
-    
-        }
-    else if("Halfling".equalsIgnoreCase(race)){
-        System.out.println(race);
-        min = 30;
-        max = 50;
-    
-        }
-    else {
-        System.out.println("Incorrect entry");
-        
-        }
-    
-    Random randAge = new Random();
-    
-    age = randAge.nextInt((max - min) + 1) + min;
-    System.out.println(age);
+
+        Random randAge = new Random();
+
+        age = randAge.nextInt((max - min) + 1) + min;
+        System.out.println(age);
 
     }
 }

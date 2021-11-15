@@ -40,13 +40,21 @@ public class DiceRoller
                 roll = r.nextInt(nSides)+1;
                 System.out.println("Roll is:  " + roll);
                 num = num + roll; 
+                if(roll > num)
+                {
+                    num = roll;
+                }
+                else 
+                {
+                roll = num;
+                }
             }  
         } 
         else
         { 
             System.out.println("Error num needs to be from 3"); 
         } 
-        System.out.println("Total is: " + num+ "\n");
+        System.out.println();
         return num;  
     } 
     
@@ -68,7 +76,7 @@ public class DiceRoller
         { 
             System.out.println("Error num needs to be from 5"); 
         } 
-        System.out.println("Total is: "+ num + "\n");
+        System.out.println();
         return num;  
     }        
              
@@ -93,7 +101,12 @@ public class DiceRoller
         { 
             System.out.println("Error num needs to be from 5"); 
         } 
-        System.out.println("Total is: "+ sum + result);
+        System.out.println("\n");
         return sum; 
      }
+    public void chooseDice()
+    {
+        Scanner 
+        System.out.println();
+    }
 }

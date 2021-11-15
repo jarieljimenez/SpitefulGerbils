@@ -5,8 +5,11 @@ package spitefulgerbilsapp;
  * @author Bryce A.
  */
 import java.util.Random;
+import java.util.Scanner;
 public class DiceRoller
 {   
+    private int diceRoll;
+    
     public static int roll1d3Dice(int number, int nSides)
     {
         int result = 0;
@@ -54,7 +57,7 @@ public class DiceRoller
         { 
             System.out.println("Error num needs to be from 3"); 
         } 
-        System.out.println();
+        
         return num;  
     } 
     
@@ -76,7 +79,7 @@ public class DiceRoller
         { 
             System.out.println("Error num needs to be from 5"); 
         } 
-        System.out.println();
+        
         return num;  
     }        
              
@@ -103,10 +106,26 @@ public class DiceRoller
         } 
         System.out.println("\n");
         return sum; 
-     }
+    }
+    
     public void chooseDice()
     {
-        Scanner 
-        System.out.println();
+        Scanner chooseDice = new Scanner(System.in);
+        System.out.println("Choose which dice to roll: " + "1: 3d6, " + "2: 5d6, " + "3: 5d6 + 1d3 Dice Roll");
+        diceRoll = chooseDice.nextInt();
+        
+        if(diceRoll == 1)
+        {
+            roll3d6Dice(3,6);
+            
+        }
+        else if(diceRoll == 2)
+        {
+            roll5d6Dice(5,6);
+        }
+        else if(diceRoll == 3)
+        {
+            rollExtra5d6Dice(5,6);
+        }
     }
 }

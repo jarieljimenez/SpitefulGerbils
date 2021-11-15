@@ -79,6 +79,7 @@ public class HeightWeight extends DiceRoller{
                 if("strength".equalsIgnoreCase(score1) || "dexterity".equalsIgnoreCase(score1) || "constitution".equalsIgnoreCase(score1) || "intelligence".equalsIgnoreCase(score1) || "wisdom".equalsIgnoreCase(score1) || "charisma".equalsIgnoreCase(score1)){
                     if("strength".equalsIgnoreCase(score1)){
                         strength = scoreNum;
+                        abArr[] = abArr[] - abArr["Strength"];
                     }else if("dexterity".equalsIgnoreCase(score1)){
                         dexterity = scoreNum;
                     }else if("constitution".equalsIgnoreCase(score1)){

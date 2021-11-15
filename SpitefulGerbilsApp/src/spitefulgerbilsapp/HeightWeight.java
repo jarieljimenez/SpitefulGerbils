@@ -3,7 +3,8 @@ package spitefulgerbilsapp;
 import java.util.Random;
 import java.util.Scanner;
 
-public class HeightWeight{
+public class HeightWeight extends DiceRoller
+{
     
     private String mf;
     private String rc;
@@ -24,6 +25,7 @@ public class HeightWeight{
     private int randomNum;
     private int height;
     private int modHeight;
+    private int abilityScore;
     
     public void charGen(){
         Scanner name = new Scanner(System.in);
@@ -192,15 +194,52 @@ public class HeightWeight{
     
         age = randAge.nextInt((max - min) + 1) + min;
     }
+    
+    public void generateRaceScore()
+    {  
+            if("male".equalsIgnoreCase(mf) || "female".equalsIgnoreCase(mf)){
+            Scanner race = new Scanner(System.in);
+            System.out.println("What is your race? Human, Elf, Dwarf, Gnome, or Halfing?");
+            rc = race.nextLine();
+            if("human".equalsIgnoreCase(rc) || "elf".equalsIgnoreCase(rc) || "dwarf".equalsIgnoreCase(rc) || "gnome".equalsIgnoreCase(rc) || "halfling".equalsIgnoreCase(rc)){
+
+                if("human".equalsIgnoreCase(rc)){
+                    rc = "Human";
+                    System.out.println("Your Ability Score Has Not Changed");
+                }
+                else if("elf".equalsIgnoreCase(rc))
+                {
+                    rc = "Elf";
+                    System.out.println("Your Ability Score is Changed by +2");
+                }
+                else if("dwarf".equalsIgnoreCase(rc))
+                {
+                    rc = "Dwarf";
+                    System.out.println("Your Ability Score is Changed by +2");
+                }
+                else if("gnome".equalsIgnoreCase(rc))
+                {
+                    rc = "Gnome";
+                    System.out.println("Your Ability Score is Changed by +2");
+                }
+                else if("halfling".equalsIgnoreCase(rc))
+                {
+                    rc = "Halfing";
+                    abilityScore = roll3d6Dice(3,6);
+                    System.out.println("Your Ability Score is Changed by +2");
+                }
+    }
+    
       
-    public void displayStats(){
+    public void displayStats()
+    {
         System.out.println("\nName: " + nm);
         System.out.println("Gender: " + mf);
         System.out.println("Alignment: " + alnmt);
         System.out.println("Race: " + rc);
+        System.out.println("Ability Score: " + abilityScore);
         System.out.println("Height: " + height + "'" + modHeight + '"');
         System.out.println("Weight: " + randomNumTwo);
-        System.out.println("Age: "  + age);
-        
+        System.out.println("Age: "  + age);   
     }
 }

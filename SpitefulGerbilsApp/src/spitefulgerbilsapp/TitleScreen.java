@@ -27,7 +27,6 @@ public class TitleScreen {
     public static String email_login;
     private static String fulltext = "";
     private static String line;
-    private static int i = 0;
     
     public static void firstmenu() throws IOException // Method for main menu
     {
@@ -70,8 +69,6 @@ public class TitleScreen {
             BufferedReader bufferedReader = new BufferedReader(reader); // Reads in files more efficiently
             while ((line = bufferedReader.readLine()) != null) // Sets line to equal the readline
             {
-
-                    //System.out.print(arr[i]);
                     System.out.println(line);
                     fulltext += line;
                     i++;

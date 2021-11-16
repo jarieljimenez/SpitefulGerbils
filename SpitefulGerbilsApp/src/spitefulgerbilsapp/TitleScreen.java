@@ -71,7 +71,6 @@ public class TitleScreen {
             {
                     System.out.println(line); //prints line as it is scanned going to next line
                     fulltext += line; 
-                    i++;
                     
             }
             reader.close(); //Closes reader

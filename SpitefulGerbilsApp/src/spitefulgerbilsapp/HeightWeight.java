@@ -676,28 +676,28 @@ public class HeightWeight extends TitleScreen{
             strength = strength - 2;
         }            
     }
-    public void textPrinter() throws IOException{
-        PrintWriter out = new PrintWriter(email + "-" + password + ".txt");
+    public void textPrinter() throws IOException{ //Printing out display for after character is created
+        PrintWriter out = new PrintWriter(email + "-" + password + ".txt"); //Writes new text file for the character and account
         
-        out.println("\nStatistics");
-        out.println("********************");
-        out.println("\nName: " + nm);
-        out.println("Gender: " + mf);
-        out.println("Race: " + rc);
-        out.println("Alignment: " + alnmt);
-        out.println("Age: " + age);
-        out.println("Height: " + height + "'" + modHeight + '"');
-        out.println("Weight: "  + randomNumTwo);
-        out.println("\nAbility Scores");
-        out.println("********************");
-        out.println("\nStrength: " + strength);
-        out.println("Dexterity: " + dexterity);
-        out.println("Constitution: " + constitution);
-        out.println("Intelligence: " + intelligence);
-        out.println("Wisdom: " + wisdom);
-        out.println("Charisma: " + charisma);
+        out.println("\nStatistics"); //displays stats
+        out.println("********************"); //formatting
+        out.println("\nName: " + nm); //Displays name
+        out.println("Gender: " + mf); //Displays male of female 
+        out.println("Race: " + rc); //Displays race
+        out.println("Alignment: " + alnmt); //Displays alignment
+        out.println("Age: " + age); //Displays age
+        out.println("Height: " + height + "'" + modHeight + '"'); //Displays height
+        out.println("Weight: "  + randomNumTwo); //Displays Weight
+        out.println("\nAbility Scores"); // Displays ability scores
+        out.println("********************"); // formatting
+        out.println("\nStrength: " + strength); //Displays strength
+        out.println("Dexterity: " + dexterity); //Displays Dexterity
+        out.println("Constitution: " + constitution); //Displays Constitution
+        out.println("Intelligence: " + intelligence); //Displays Intelligence
+        out.println("Wisdom: " + wisdom); //Displays Wisdom
+        out.println("Charisma: " + charisma); //Displays Charisma
         
-        out.close();
+        out.close(); //Closes output file
     }
     
 }

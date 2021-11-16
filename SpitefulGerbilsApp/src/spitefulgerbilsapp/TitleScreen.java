@@ -19,8 +19,8 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class TitleScreen {
-    
-    public static String username;
+    //created public variables for other classes to use (height weight class) 
+    public static String username; 
     public static String password;
     public static String email;
     public static String password_login;
@@ -30,11 +30,11 @@ public class TitleScreen {
     
     public static void firstmenu() throws IOException // Method for main menu
     {
-        TitleScreen test1 = new TitleScreen();
+        TitleScreen test1 = new TitleScreen();  //created object for testing
         Scanner scanner = new Scanner(System.in);
         System.out.println("1.) Load Character \n2.) New Character "); // Asks for response from user to make
                                                                                  // account or login
-        int decision = scanner.nextInt();
+        int decision = scanner.nextInt(); //takes scanner input for each decision
         if (decision == 1) {
             signUp(); // calls account creation method
         } else if (decision == 2) {
@@ -69,15 +69,15 @@ public class TitleScreen {
             BufferedReader bufferedReader = new BufferedReader(reader); // Reads in files more efficiently
             while ((line = bufferedReader.readLine()) != null) // Sets line to equal the readline
             {
-                    System.out.println(line);
-                    fulltext += line;
+                    System.out.println(line); //prints line as it is scanned going to next line
+                    fulltext += line; 
                     i++;
                     
             }
-            reader.close();
+            reader.close(); //Closes reader
         }catch(IOException e){
-                System.out.println("\n\nIncorrect Email or Password.");
-                signIn();
+                System.out.println("\n\nIncorrect Email or Password."); //If password or email is incorrect 
+                signIn(); //calls sign in again if first attempt fails
         }
 
     }

@@ -9,15 +9,15 @@ public class HeightWeight extends TitleScreen{
     
     private String mf;
     private String rc;
-    private String alnmt;
+    private String alnmt;  //main variables to generate
     private String nm;
     private String gn;
     private String on;
     private int fWeiMax;
     private int fWeiMin;
     private int mWeiMax;
-    private int mWeiMin;
-    private int fHeiMax; 
+    private int mWeiMin; //varaibles for the different mins and maxs for height, weight
+    private int fHeiMax; //and age based on the race.
     private int fHeiMin;
     private int mHeiMax;
     private int mHeiMin;
@@ -30,18 +30,18 @@ public class HeightWeight extends TitleScreen{
     private int modHeight;
     private int strength = 0;
     private int dexterity = 0;
-    private int constitution = 0;
+    private int constitution = 0; //ability score values 
     private int intelligence = 0;
     private int wisdom = 0;
     private int charisma = 0;
     private String score1;
     private String score2;
     private String score3;
-    private String score4;
+    private String score4; //the six variables used to generate the 6 different ability scores.
     private String score5;
     private String score6;
     private int threeD;
-    private int fiveD;
+    private int fiveD;// The three dice and their total num.
     private int fiveD1;
     private int scoreNum;
     
@@ -61,50 +61,49 @@ public class HeightWeight extends TitleScreen{
 
             Scanner gen = new Scanner(System.in);
             System.out.println("\nWhat dice would you like to use? 3D6, 5D6, or 5D6 plus 1D3?");
-            gn = gen.nextLine();
-            generateRaceScore();
+            gn = gen.nextLine();        //this code snippet calls the dice maker method and 
+            generateRaceScore();        //the code for the first ability score.
             scoreOne();
 
             Scanner gen2 = new Scanner(System.in);
             System.out.println("\nWhat dice would you like to use? 3D6, 5D6, or 5D6 plus 1D3?");
-            gn = gen2.nextLine();
-            generateRaceScore();
+            gn = gen2.nextLine();       //this code snippet calls the dice maker method and
+            generateRaceScore();        //the code for the second ability score.
             scoreTwo();
 
             Scanner gen3 = new Scanner(System.in);
             System.out.println("\nWhat dice would you like to use? 3D6, 5D6, or 5D6 plus 1D3?");
-            gn = gen3.nextLine();
-            generateRaceScore();
+            gn = gen3.nextLine();       //this code snippet calls the dice maker method and
+            generateRaceScore();        //the code for the third ability score.
             scoreThree();
 
             Scanner gen4 = new Scanner(System.in);
             System.out.println("\nWhat dice would you like to use? 3D6, 5D6, or 5D6 plus 1D3?");
-            gn = gen4.nextLine();
-            generateRaceScore();
+            gn = gen4.nextLine();       //the code snippet calls the dice maker method and
+            generateRaceScore();        //the code for the fourth ability score.
             scoreFour();
 
             Scanner gen5 = new Scanner(System.in);
             System.out.println("\nWhat dice would you like to use? 3D6, 5D6, or 5D6 plus 1D3?");
-            gn = gen5.nextLine();
-            generateRaceScore();
+            gn = gen5.nextLine();       //the code snippet calls the dice maker method and
+            generateRaceScore();        //the code for the fifth ability score.
             scoreFive();
 
             Scanner gen6 = new Scanner(System.in);
             System.out.println("\nWhat dice would you like to use? 3D6, 5D6, or 5D6 plus 1D3?");
-            gn = gen6.nextLine();
-            generateRaceScore();
+            gn = gen6.nextLine();       //the code snippit calls the dice maker method and 
+            generateRaceScore();        //the code for the fifth ability score.
             scoreSix();
 
             displayStats();
-            abAdjust();
+            abAdjust();         //Displays stats and adjusts ability scores bases on race.
             displayABScores();
-            textPrinter();
+            textPrinter();      //Prints all of the instance variables for the character to a file.
         }else if("1".equalsIgnoreCase(on) || "Load Character".equalsIgnoreCase(on)){
-           signIn();
-            //System.out.println("test");
+           signIn(); //if the user loads a character it calls signIn();
         }else{
             System.out.println("Please enter a valid answer.");
-            charGen();
+            charGen(); //if the user inputs an incorrect answer it'll recursively call the code.
         }
     }      
     public void height(){
@@ -113,17 +112,17 @@ public class HeightWeight extends TitleScreen{
             mf = "Male";
             randomNum = rand.nextInt(mHeiMax + 1 - mHeiMin) + mHeiMin;
             modHeight = randomNum%12;
-            height = randomNum/12;
-        }else if("female".equalsIgnoreCase(mf)){
-            mf = "Female";
+            height = randomNum/12;                  //takes maxs and mins based on gender and then generates a random number.
+        }else if("female".equalsIgnoreCase(mf)){    //dividing that number by 12 gives the ft and then mod by 12 gives the remaining
+            mf = "Female";                          //inches
             randomNum = rand.nextInt(fHeiMax + 1 - fHeiMin) + fHeiMin;
             modHeight = randomNum%12;
             height = randomNum/12;
         }
     }
     public void weight(){
-        Random rand = new Random();    
-        if("male".equalsIgnoreCase(mf)){
+        Random rand = new Random();                 //takes maxs and mins based on gender and then generates a random number
+        if("male".equalsIgnoreCase(mf)){            //for the weight.
             mf = "Male";
             randomNumTwo = rand.nextInt(mWeiMax + 1 - mWeiMin) + mWeiMin;
         }else if("female".equalsIgnoreCase(mf)){
@@ -137,8 +136,8 @@ public class HeightWeight extends TitleScreen{
             max = 30;
         }else if("Elf".equalsIgnoreCase(rc)){
             min = 80;
-            max = 180;
-        }else if("Dwarf".equalsIgnoreCase(rc)){            
+            max = 180;                              //Uses maxs and mins based on race to randomly
+        }else if("Dwarf".equalsIgnoreCase(rc)){     //generate the age.       
             min = 40;
             max = 70;       
         }else if("Gnome".equalsIgnoreCase(rc)){            
@@ -147,10 +146,8 @@ public class HeightWeight extends TitleScreen{
         }else if("Halfling".equalsIgnoreCase(rc)){           
             min = 30;
             max = 50;  
-        }
-    
-        Random randAge = new Random();
-    
+        }    
+        Random randAge = new Random();    
         age = randAge.nextInt((max - min) + 1) + min;
     }
     
@@ -158,8 +155,8 @@ public class HeightWeight extends TitleScreen{
         if("3D6".equalsIgnoreCase(gn)){
             threeD6();
         }else if("5D6".equalsIgnoreCase(gn)){
-            fiveD6();
-        }else if("5D6 plus 1D3".equalsIgnoreCase(gn)){
+            fiveD6();                                   //calls the dice methods  and if the user does not input
+        }else if("5D6 plus 1D3".equalsIgnoreCase(gn)){  //an incorrect response it recursively runs again. 
             fiveD61();
         }else{
             System.out.println("Please enter a valid die.");
@@ -179,9 +176,9 @@ public class HeightWeight extends TitleScreen{
         Random rnd = new Random();
         int maximum = 18;
         int minimum = 3;
-        fiveD = rnd.nextInt((maximum - minimum) + 1) + minimum;
-        scoreNum = fiveD;
-        System.out.println("\nScore: " + fiveD);
+        fiveD = rnd.nextInt((maximum - minimum) + 1) + minimum; //The three methods are three different dice rolling methods
+        scoreNum = fiveD;                                       //based on a maximum and a minimum. and then sets the random
+        System.out.println("\nScore: " + fiveD);                //num equal to scoreNum.
     }
     public void fiveD61(){
         Random rnd = new Random();
@@ -198,7 +195,7 @@ public class HeightWeight extends TitleScreen{
         System.out.println("********************");
         System.out.println("\nName: " + nm);
         System.out.println("Gender: " + mf);
-        System.out.println("Alignment: " + alnmt);
+        System.out.println("Alignment: " + alnmt);      //This method just displays all of the characters stats.
         System.out.println("Race: " + rc);
         System.out.println("Height: " + height + "'" + modHeight + '"');
         System.out.println("Weight: " + randomNumTwo);
@@ -210,7 +207,7 @@ public class HeightWeight extends TitleScreen{
         System.out.println("********************");
         System.out.println("\nStrength: " + strength);
         System.out.println("Dexterity: " + dexterity);
-        System.out.println("Constitution: " + constitution);
+        System.out.println("Constitution: " + constitution); //This method displays all of the ability score values.
         System.out.println("Intelligence: " + intelligence);
         System.out.println("Wisdom: " + wisdom);
         System.out.println("Charisma: " + charisma);
@@ -226,9 +223,9 @@ public class HeightWeight extends TitleScreen{
                     strength = scoreNum;
                 }else{
                     System.out.println("Please enter an ability that does not have a score.");
-                    scoreOne();
-                }    
-            }else if("dexterity".equalsIgnoreCase(score1)){
+                    scoreOne();                              //The user is asked which ability they want to assign their score to
+                }                                            //if the ability already has a score greater than zero. the program will
+            }else if("dexterity".equalsIgnoreCase(score1)){  //print an error and recursively run it again.
                 if(dexterity <= 0){    
                     dexterity = scoreNum;
                 }else{
@@ -537,7 +534,7 @@ public class HeightWeight extends TitleScreen{
     public void genGender(){
         Scanner gender = new Scanner(System.in);
         System.out.println("Are you Male or Female?");  //Asking for gender and then setting the variable to a specific String based on input
-        mf = gender.nextLine();
+        mf = gender.nextLine();                         //if the user enters an incorrect resposne. it returns an error and recursively runs.
         if("male".equalsIgnoreCase(mf)){
             mf = "Male";
         }else if("female".equalsIgnoreCase(mf)){
@@ -562,8 +559,8 @@ public class HeightWeight extends TitleScreen{
                 alnmt = "Chaotic Good";
             }else if("neutral good".equalsIgnoreCase(alnmt)){
                 alnmt = "Neutral Good";
-            }else if("lawful evil".equalsIgnoreCase(alnmt)){
-                alnmt = "Lawfull Evil";
+            }else if("lawful evil".equalsIgnoreCase(alnmt)){            //The user selects an alignment and then if the user enters an incorrect response
+                alnmt = "Lawfull Evil";                                 //it prints an error and recursively runs.
             }else if("chaotic evil".equalsIgnoreCase(alnmt)){
                 alnmt = "Chaotic Evil";
             }else if("neutral evil".equalsIgnoreCase(alnmt)){
@@ -594,8 +591,8 @@ public class HeightWeight extends TitleScreen{
             height();
             weight();
             ageGenerate();
-        }else if("elf".equalsIgnoreCase(rc)){
-            rc = "Elf";
+        }else if("elf".equalsIgnoreCase(rc)){ //Asks the user what race they would like to be and then changes the maxs and mins  
+            rc = "Elf";                       //for heights and weights for each respective race.
             fWeiMax = 100;
             fWeiMin = 65;
             mWeiMax = 130;
@@ -664,9 +661,9 @@ public class HeightWeight extends TitleScreen{
             constitution = constitution - 2;
         }else if("dwarf".equalsIgnoreCase(rc)){
             strength = strength + 2;
-            constitution = constitution + 2;
-            charisma = charisma - 2;
-        }else if("gnome".equalsIgnoreCase(rc)){
+            constitution = constitution + 2;        //Adjusts the ability scores for the character
+            charisma = charisma - 2;                //based on its race.
+        }else if("gnome".equalsIgnoreCase(rc)){     
             dexterity = dexterity + 2;
             constitution = constitution + 2;
             strength = strength - 2;
@@ -676,28 +673,28 @@ public class HeightWeight extends TitleScreen{
             strength = strength - 2;
         }            
     }
-    public void textPrinter() throws IOException{ //Printing out display for after character is created
-        PrintWriter out = new PrintWriter(email + "-" + password + ".txt"); //Writes new text file for the character and account
+    public void textPrinter() throws IOException{
+        PrintWriter out = new PrintWriter(email + "-" + password + ".txt");
         
-        out.println("\nStatistics"); //displays stats
-        out.println("********************"); //formatting
-        out.println("\nName: " + nm); //Displays name
-        out.println("Gender: " + mf); //Displays male of female 
-        out.println("Race: " + rc); //Displays race
-        out.println("Alignment: " + alnmt); //Displays alignment
-        out.println("Age: " + age); //Displays age
-        out.println("Height: " + height + "'" + modHeight + '"'); //Displays height
-        out.println("Weight: "  + randomNumTwo); //Displays Weight
-        out.println("\nAbility Scores"); // Displays ability scores
-        out.println("********************"); // formatting
-        out.println("\nStrength: " + strength); //Displays strength
-        out.println("Dexterity: " + dexterity); //Displays Dexterity
-        out.println("Constitution: " + constitution); //Displays Constitution
-        out.println("Intelligence: " + intelligence); //Displays Intelligence
-        out.println("Wisdom: " + wisdom); //Displays Wisdom
-        out.println("Charisma: " + charisma); //Displays Charisma
+        out.println("\nStatistics");
+        out.println("********************");
+        out.println("\nName: " + nm);
+        out.println("Gender: " + mf);
+        out.println("Race: " + rc);
+        out.println("Alignment: " + alnmt);
+        out.println("Age: " + age);
+        out.println("Height: " + height + "'" + modHeight + '"');  //The text printer prints all of the variables out onto a 
+        out.println("Weight: "  + randomNumTwo);                   //txt file and then stores it so it can be called again.
+        out.println("\nAbility Scores");
+        out.println("********************");
+        out.println("\nStrength: " + strength);
+        out.println("Dexterity: " + dexterity);
+        out.println("Constitution: " + constitution);
+        out.println("Intelligence: " + intelligence);
+        out.println("Wisdom: " + wisdom);
+        out.println("Charisma: " + charisma);
         
-        out.close(); //Closes output file
+        out.close();
     }
     
 }

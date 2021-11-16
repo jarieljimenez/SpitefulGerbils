@@ -18,51 +18,66 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-public class TitleScreen 
-{        
-    public static void signUp() throws IOException 
+public class TitleScreen {
+    //created public variables for other classes to use (height weight class) 
+    public static String username; 
+    public static String password;
+    public static String email;
+    public static String password_login;
+    public static String email_login;
+    private static String fulltext = "";
+    private static String line;
+    
+    public static void firstmenu() throws IOException // Method for main menu
     {
-        FileWriter writer = new FileWriter("user_info.txt",true); 
+        TitleScreen test1 = new TitleScreen();  //created object for testing
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Please Enter user name");
-        String name = scanner.nextLine();
-        System.out.println("Please Enter user email address");
-        String email = scanner.nextLine();
-        System.out.println("Please Enter user password");
-        String password = scanner.nextLine();
-        writer.write(name+","+email+","+password+"\n");
-        writer.close();
-        signIn(); 
+        System.out.println("1.) Load Character \n2.) New Character "); // Asks for response from user to make
+                                                                                 // account or login
+        int decision = scanner.nextInt(); //takes scanner input for each decision
+        if (decision == 1) {
+            signUp(); // calls account creation method
+        } else if (decision == 2) {
+            signIn(); // calls account signIn method
+        }
     }
-    public static void signIn() throws IOException 
+
+    public static void signUp() throws IOException // Account creation method
     {
-        FileReader reader = new FileReader("user_info.txt");
-        BufferedReader bufferedReader = new BufferedReader(reader);
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Please Sign in");
-        System.out.println("Enter your email: ");
-        String email_login = scanner.nextLine();
-        System.out.println("Enter your password: ");
-        String password_login = scanner.nextLine();
-        String line;
-        while ((line = bufferedReader.readLine()) != null)
-        {
-            String line_split[]=line.split(",");
-            //System.out.println(email_login);
-            //System.out.println(line_split[1]);
-            //System.out.println(password_login);
-            //System.out.println(line_split[2]);
-            if(line_split[1].equals(email_login) && line_split[2].equals(password_login))
+        FileWriter writer = new FileWriter("user_info.txt", true); // writes to file
+        Scanner scanner = new Scanner(System.in); // Creating scanner
+        System.out.println("Please Enter user Email Address");
+        email = scanner.nextLine(); // Entering email
+        System.out.println("Please Enter user Password");
+        password = scanner.nextLine(); // Entering password
+        writer.write(username + "," + email + "," + password + "\n"); // Writing name email and password to file with ,
+                                                                  // between and new line for each section
+        writer.close(); // Closes file after writing
+    }
+
+    public static void signIn() throws IOException // Sign In method
+    {
+
+        Scanner scanner = new Scanner(System.in); // Sets up scanner
+        System.out.println("Please Sign in"); // Display
+        System.out.println("Enter your Email: "); // Display
+        email = scanner.nextLine(); // Takes email login
+        System.out.println("Enter your Password: "); // Display
+        password = scanner.nextLine(); // Takes password login
+        try{
+            FileReader reader = new FileReader(email + "-" + password + ".txt"); // Reads lines from file that was used to save login info
+            BufferedReader bufferedReader = new BufferedReader(reader); // Reads in files more efficiently
+            while ((line = bufferedReader.readLine()) != null) // Sets line to equal the readline
             {
-                reader.close();
-                System.out.println("success");
-                System.exit(0);
-                // Create user object with the following properties: name, password, email
-                // Characters class will need to extend this user object
+                    System.out.println(line); //prints line as it is scanned going to next line
+                    fulltext += line; 
+                    
             }
+            reader.close(); //Closes reader
+        }catch(IOException e){
+                System.out.println("\n\nIncorrect Email or Password."); //If password or email is incorrect 
+                signIn(); //calls sign in again if first attempt fails
         }
-        reader.close();
-        System.out.println("Username or Password Incorrect");
-        signIn();
-        }
+
     }
+}

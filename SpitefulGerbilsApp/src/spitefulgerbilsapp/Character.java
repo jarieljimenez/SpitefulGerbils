@@ -1,5 +1,7 @@
 package spitefulgerbilsapp;
+
 import java.util.Scanner;
+
 /**
  *
  * @author XWP921
@@ -17,19 +19,24 @@ public class Character implements GerbilsInterface {
         System.out.print("Select a gender - (M) Male or (F) Female: ");
         gender = in.nextLine();
     }
+
     public void accessCharInfo() {
-        
+
     }
+
     public void setNewChar() {
-        
+
     }
+
     public void getNewChar() {
-        
+
     }
+
     public void setUserAccount() {
-        
+
     }
+
     public void getUserAccount() {
-        
+
     }
 }
